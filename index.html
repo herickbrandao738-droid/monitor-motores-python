@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TELEMETRIA CÓSMICA // Análise do Sistema Python</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CAMADAS DE FUNDO ESPACIAL (SEM JAVASCRIPT) -->
+    <div class="universo-bg">
+        <div class="estrelas-camada-1"></div>
+        <div class="estrelas-camada-2"></div>
+        <div class="nebulosa nebulosa-roxa"></div>
+        <div class="nebulosa nebulosa-ciano"></div>
+        <div class="grade-holografica"></div>
+    </div>
+
+    <!-- CONTAINER PRINCIPAL -->
+    <main class="estacao-espacial">
+
+        <!-- CABEÇALHO HOLOGRÁFICO -->
+        <header class="hud-header">
+            <div class="hud-badge">
+                <span class="pulso-orb"></span>
+                TRANSMISSÃO DE DADOS INTERPLANETÁRIA // PYTHON v3.x
+            </div>
+            <h1 class="titulo-glitch" data-text="MONITORAMENTO DE MOTORES">MONITORAMENTO DE MOTORES</h1>
+            <p class="subtitulo-espacial">
+                Decodificação estrutural, arquitetura lógica e projeção de telemetria do script industrial.
+            </p>
+
+            <!-- BARRA DE STATUS DO SISTEMA -->
+            <div class="hud-telemetry-bar">
+                <div class="tele-item">
+                    <span class="tele-label">SISTEMA</span>
+                    <span class="tele-val">v1.0.0</span>
+                </div>
+                <div class="tele-item">
+                    <span class="tele-label">UNIDADES ATIVAS</span>
+                    <span class="tele-val">04 MOTORES</span>
+                </div>
+                <div class="tele-item">
+                    <span class="tele-label">POTÊNCIA TOTAL</span>
+                    <span class="tele-val">31.5 kW</span>
+                </div>
+                <div class="tele-item alerta-pulso">
+                    <span class="tele-label">ESTADO DA REDE</span>
+                    <span class="tele-val">ALERTA CRÍTICO (MTR-02)</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- NAVEGAÇÃO POR ABAS EM CSS PURO (RADIO HACK) -->
+        <section class="sistema-abas">
+            <input type="radio" name="navegacao-hud" id="tab-visao" checked>
+            <input type="radio" name="navegacao-hud" id="tab-codigo">
+            <input type="radio" name="navegacao-hud" id="tab-resultados">
+            <input type="radio" name="navegacao-hud" id="tab-terminal">
+
+            <nav class="menu-orbital">
+                <label for="tab-visao" class="btn-orbital">
+                    <span class="num-orb">01</span> VISÃO GERAL & FLUXO
+                </label>
+                <label for="tab-codigo" class="btn-orbital">
+                    <span class="num-orb">02</span> ANATOMIA DO CÓDIGO
+                </label>
+                <label for="tab-resultados" class="btn-orbital">
+                    <span class="num-orb">03</span> DIAGNÓSTICO DOS MOTORES
+                </label>
+                <label for="tab-terminal" class="btn-orbital">
+                    <span class="num-orb">04</span> SAÍDA DO TERMINAL
+                </label>
+            </nav>
+
+            <!-- ========================================================= -->
+            <!-- ABA 01: VISÃO GERAL E ARQUITETURA                         -->
+            <!-- ========================================================= -->
+            <div class="painel-conteudo" id="conteudo-visao">
+                <div class="card-espacial destaque-borda">
+                    <h2>// O QUE ESTE CÓDIGO FAZ?</h2>
+                    <p>
+                        O script em Python simula um <strong>Sistema de Telemetria e Manutenção Preditiva Industrial</strong>. 
+                        Ele recebe leituras brutas de sensores instalados em quatro motores elétricos de uma fábrica, 
+                        filtra dados corrompidos ou negativos, compara os parâmetros físicos contra limites de segurança, 
+                        calcula médias gerais da planta e gera um plano automatizado de ação para a equipe de engenharia.
+                    </p>
+                </div>
+
+                <h3 class="titulo-secao">PIPELINE DE PROCESSAMENTO DE DADOS</h3>
+                
+                <div class="fluxo-grid">
+                    <div class="etapa-fluxo">
+                        <div class="etapa-icone">I</div>
+                        <h4>Ingestão & Constantes</h4>
+                        <p>Define os limiares físicos (Temperatura, Corrente, Vibração e RPM) e armazena os dicionários com as leituras dos 4 motores.</p>
+                    </div>
+                    <div class="seta-fluxo">➔</div>
+                    <div class="etapa-fluxo">
+                        <div class="etapa-icone">II</div>
+                        <h4>Sanitização</h4>
+                        <p>A função <code>validar_leitura()</code> verifica se existem campos nulos, ausentes ou valores fisicamente impossíveis (negativos).</p>
+                    </div>
+                    <div class="seta-fluxo">➔</div>
+                    <div class="etapa-fluxo">
+                        <div class="etapa-icone">III</div>
+                        <h4>Motor de Regras</h4>
+                        <p><code>analisar_alertas()</code> cruza os sensores com os limites e classifica cada máquina em <strong>NORMAL</strong>, <strong>ATENCAO</strong> ou <strong>CRITICO</strong>.</p>
+                    </div>
+                    <div class="seta-fluxo">➔</div>
+                    <div class="etapa-fluxo">
+                        <div class="etapa-icone">IV</div>
+                        <h4>Relatório & Ação</h4>
+                        <p>Consolida estatísticas globais, imprime o painel em tempo real e segrega os motores em filas de manutenção preventiva.</p>
+                    </div>
+                </div>
+
+                <div class="card-espacial aviso-tecnico">
+                    <h3>⚠️ CURIOSIDADE TÉCNICA NO SEU CÓDIGO</h3>
+                    <p>
+                        Observe o final do seu script: existem <strong>dois blocos</strong> <code>if __name__ == "__main__":</code>. 
+                        Quando o Python executa o arquivo, ele roda o primeiro bloco (exibindo o painel uma vez) e logo em seguida 
+                        executa o segundo bloco (exibindo o painel <strong>novamente</strong> e depois o plano de manutenção). 
+                        Na aba <em>04. Saída do Terminal</em>, você verá exatamente esse comportamento duplicado!
+                    </p>
+                </div>
+            </div>
+
+            <!-- ========================================================= -->
+            <!-- ABA 02: ANATOMIA DETALHADA DO CÓDIGO                      -->
+            <!-- ========================================================= -->
+            <div class="painel-conteudo" id="conteudo-codigo">
+                <h2 class="titulo-secao">// DISSECAÇÃO BLOCO A BLOCO</h2>
+
+                <div class="lista-blocos">
+
+                    <!-- BLOCO 1 -->
+                    <article class="bloco-codigo-card">
+                        <div class="bloco-header">
+                            <span class="tag-modulo">MÓDULO 01 // CONFIGURAÇÃO</span>
+                            <h3>Constantes, Limites e Base de Dados</h3>
+                        </div>
+                        <div class="bloco-corpo">
+                            <pre class="codigo-fonte"><code>from datetime import datetime
+
+SISTEMA_NOME = "Monitoramento de Motores Industriais"
+VERSAO = "1.0.0"
+
+LIMITES = {
+    "temperatura_max": 80.0,
+    "corrente_max": 18.5,
+    "vibracao_max": 4.5,
+    "rpm_min": 1400,
+    "rpm_max": 1800,
+}</code></pre>
+                            <div class="explicacao-texto">
+                                <p><strong>O que acontece aqui:</strong></p>
+                                <ul>
+                                    <li><code>datetime</code> é importado para registrar o carimbo de data/hora exato da auditoria.</li>
+                                    <li><code>LIMITES</code> usa um <strong>dicionário Python</strong> para centralizar as regras de negócio. Se a engenharia quiser mudar o limite de calor, basta alterar aqui.</li>
+                                    <li><code>LEITURAS_MOTORES</code> é uma <strong>lista de dicionários</strong>, funcionando como um banco de dados em memória (JSON-like) com 4 registros.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- BLOCO 2 -->
+                    <article class="bloco-codigo-card">
+                        <div class="bloco-header">
+                            <span class="tag-modulo">MÓDULO 02 // SEGURANÇA</span>
+                            <h3>Validação e Filtragem de Sensores</h3>
+                        </div>
+                        <div class="bloco-corpo">
+                            <pre class="codigo-fonte"><code>def validar_leitura(motor):
+    campos_obrigatorios = ["id", "setor", "temperatura", ...]
+    for campo in campos_obrigatorios:
+        if campo not in motor or motor[campo] is None:
+            return False
+    if motor["temperatura"] < 0 or motor["corrente"] < 0 ...:
+        return False
+    return True
+
+def obter_leituras_validas(lista_motores):
+    return [m for m in lista_motores if validar_leitura(m)]</code></pre>
+                            <div class="explicacao-texto">
+                                <p><strong>O que acontece aqui:</strong></p>
+                                <ul>
+                                    <li>Garante integridade antes de qualquer cálculo matemático, evitando erros como <code>KeyError</code> ou <code>TypeError</code>.</li>
+                                    <li>Bloqueia sensores defeituosos que enviem valores negativos.</li>
+                                    <li><code>obter_leituras_validas()</code> utiliza <strong>List Comprehension</strong> (uma estrutura elegante do Python) para filtrar apenas os motores aprovados. No seu exemplo, todos os 4 passam.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- BLOCO 3 -->
+                    <article class="bloco-codigo-card">
+                        <div class="bloco-header">
+                            <span class="tag-modulo">MÓDULO 03 // DIAGNÓSTICO</span>
+                            <h3>Análise de Alertas e Classificação de Risco</h3>
+                        </div>
+                        <div class="bloco-corpo">
+                            <pre class="codigo-fonte"><code>def analisar_alertas(motor):
+    alertas = []
+    if motor["temperatura"] > LIMITES["temperatura_max"]: ...
+    if motor["corrente"] > LIMITES["corrente_max"]: ...
+    if motor["vibracao"] > LIMITES["vibracao_max"]: ...
+    if motor["rpm"] < LIMITES["rpm_min"] or ...: ...
+
+    if len(alertas) == 0: status = "NORMAL"
+    elif len(alertas) == 1: status = "ATENCAO"
+    else: status = "CRITICO"
+    return status, alertas</code></pre>
+                            <div class="explicacao-texto">
+                                <p><strong>O que acontece aqui:</strong></p>
+                                <ul>
+                                    <li>Cada métrica é testada de forma <strong>independente</strong> (quatro blocos <code>if</code> separados, não <code>elif</code>), permitindo acumular múltiplos defeitos simultâneos.</li>
+                                    <li><strong>Regra de Severidade:</strong> 0 falhas = <code>NORMAL</code>; 1 falha = <code>ATENCAO</code>; 2 ou mais falhas = <code>CRITICO</code>.</li>
+                                    <li>Retorna uma <strong>tupla</strong> contendo a string de status e a lista descritiva das anomalias.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- BLOCO 4 -->
+                    <article class="bloco-codigo-card">
+                        <div class="bloco-header">
+                            <span class="tag-modulo">MÓDULO 04 // INTELIGÊNCIA & MANUTENÇÃO</span>
+                            <h3>Estatísticas Globais e Plano Preventivo</h3>
+                        </div>
+                        <div class="bloco-corpo">
+                            <pre class="codigo-fonte"><code>def calcular_estatisticas(motores):
+    temp_media = sum(m["temperatura"] for m in motores) / total
+    maior_temp = max(motores, key=lambda m: m["temperatura"])
+    ...
+
+def gerar_plano_manutencao(motores):
+    plano = {"CRITICO": [], "ATENCAO": [], "NORMAL": []}
+    ...</code></pre>
+                            <div class="explicacao-texto">
+                                <p><strong>O que acontece aqui:</strong></p>
+                                <ul>
+                                    <li>Usa expressões geradoras com <code>sum()</code> para somar temperaturas, correntes e potências em kW.</li>
+                                    <li>Usa <code>max(..., key=lambda...)</code> para encontrar o dicionário do motor mais quente e extrair seu <code>id</code>.</li>
+                                    <li><code>gerar_plano_manutencao()</code> agrupa os motores em três filas de prioridade operacional: parada imediata, inspeção programada e operação estável.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- ========================================================= -->
+            <!-- ABA 03: DIAGNÓSTICO VISUAL DOS RESULTADOS                -->
+            <!-- ========================================================= -->
+            <div class="painel-conteudo" id="conteudo-resultados">
+                <h2 class="titulo-secao">// TELEMETRIA CALCULADA DOS 4 MOTORES</h2>
+
+                <!-- CARDS DOS MOTORES -->
+                <div class="motores-grid">
+
+                    <!-- MTR-01 -->
+                    <div class="motor-card status-normal">
+                        <div class="motor-topo">
+                            <div>
+                                <span class="motor-id">MTR-01</span>
+                                <span class="motor-setor">SETOR: ESTAMPARIA</span>
+                            </div>
+                            <span class="badge-status normal">NORMAL</span>
+                        </div>
+                        <div class="metricas-lista">
+                            <div class="metrica">
+                                <div class="metrica-info"><span>Temperatura</span><span>68.4°C / 80.0°C</span></div>
+                                <div class="barra-bg"><div class="barra-fill" style="width: 85.5%;"></div></div>
+                            </div>
+                            <div class="metrica">
+                                <div class="metrica-info"><span>Corrente</span><span>14.2A / 18.5A</span></div>
+                                <div class="barra-bg"><div class="barra-fill" style="width: 76.7%;"></div></div>
+                            </div>
+                            <div class="metrica">
+                                <div class="metrica-info"><span>Vibração</span><span>2.1 mm/s / 4.5</span></div>
+                                <div class="barra-bg"><div class="barra-fill" style="width: 46.6%;"></div></div>
+                            </div>
+                            <div class="metrica-extra">
+                                <span>Rotação: <strong>1750 RPM</strong> (OK)</span>
+                                <span>Potência: <strong>7.5 kW</strong></span>
+                            </div>
+                        </div>
+                        <div class="motor-veredito">
+                            ✓ Nenhuma anomalia detectada. Operação estável.
+                        </div>
+                    </div>
+
+                    <!-- MTR-02 -->
+                    <div class="motor-card status-critico">
+                        <div class="motor-topo">
+                            <div>
+                                <span class="motor-id">MTR-02</span>
+                                <span class="motor-setor">SETOR: USINAGEM</span>
+                            </div>
+                            <span class="badge-status critico">CRITICO (3 FALHAS)</span>
+                        </div>
+                        <div class="metricas-lista">
+                            <div class="metrica estourada">
+                                <div class="metrica-info"><span>Temperatura (EXCEDIDA)</span><span>84.7°C / 80.0°C</span></div>
+                                <div class="barra-bg"><div class="barra-fill" style="width: 100%;"></div></div>
+                            </div>
+                            <div class="metrica estourada">
+                                <div class="metrica-info"><span>Corrente (EXCEDIDA)</span><span>19.3A / 18.5A</span></div>
+                                <div class="barra-bg"><div class="barra-fill" style="width: 100%;"></div></div>
+                            </div>
+                            <div class="metrica estourada">
+                                <div class="metrica-info"><span>Vibração (EXCEDIDA)</span><span>5.2 mm/s / 4.5</span></div>
+                                <div class="barra-bg"><div class="barra-fill" style="width: 100%;"></div></div>
+                            </div>
+                            <div class="metrica-extra">
+                                <span>Rotação: <strong>1690 RPM</strong> (OK)</span>
+                                <span>Potência: <strong>11.0 kW</strong></span>
+                            </div>
+                        </div>
+                        <div class="motor-veredito">
+                            ⚠ PARADA IMEDIATA: Superaquecimento, Sobrecorrente e Vibração elevada.
+                        </div>
+                    </div>
+
+                    <!-- MTR-03 -->
+                    <div class="motor-card status-atencao">
+                        <div class="motor-topo">
+                            <div>
+                                <span class="motor-id">MTR-03</span>
+                                <span class="motor-setor">SETOR: BOBINAGEM</span>
+                            </div>
+                            <span class="badge-status atencao">ATENCAO (1 FALHA)</span>
+                        </div>
+                        <div class="metricas-lista">
+                            <div class="metrica">
+                                <div class="metrica-info"><span>Temperatura</span><span>76.2°C / 80.0°C</span></div>
+                                <div class="barra-bg"><div class="barra-fill" style="width: 95.2%;"></div></div>
+                            </div>
+                            <div class="metrica">
+                                <div class="metrica-info"><span>Corrente</span><span>17.8A / 18.5A</span></div>
+                                <div class="barra-bg"><div class="barra-fill" style="width: 96.2%;"></div></div>
+                            </div>
+                            <div class="metrica estourada">
+                                <div class="metrica-info"><span>Vibração (EXCEDIDA)</span><span>4.7 mm/s / 4.5</span></div>
+                                <div class="barra-bg"><div class="barra-fill" style="width: 100%;"></div></div>
+                            </div>
+                            <div class="metrica-extra">
+                                <span>Rotação: <strong>1520 RPM</strong> (OK)</span>
+                                <span>Potência: <strong>5.5 kW</strong></span>
+                            </div>
+                        </div>
+                        <div class="motor-veredito">
+                            ⚡ INSPEÇÃO PROGRAMADA: Vibração elevada (4.7 mm/s).
+                        </div>
+                    </div>
+
+                    <!-- MTR-04 -->
+                    <div class="motor-card status-normal">
+                        <div class="motor-topo">
+                            <div>
+                                <span class="motor-id">MTR-04</span>
+                                <span class="motor-setor">SETOR: PINTURA</span>
+                            </div>
+                            <span class="badge-status normal">NORMAL</span>
+                        </div>
+                        <div class="metricas-lista">
+                            <div class="metrica">
+                                <div class="metrica-info"><span>Temperatura</span><span>61.0°C / 80.0°C</span></div>
+                                <div class="barra-bg"><div class="barra-fill" style="width: 76.2%;"></div></div>
+                            </div>
+                            <div class="metrica">
+                                <div class="metrica-info"><span>Corrente</span><span>11.5A / 18.5A</span></div>
+                                <div class="barra-bg"><div class="barra-fill" style="width: 62.1%;"></div></div>
+                            </div>
+                            <div class="metrica">
+                                <div class="metrica-info"><span>Vibração</span><span>1.8 mm/s / 4.5</span></div>
+                                <div class="barra-bg"><div class="barra-fill" style="width: 40%;"></div></div>
+                            </div>
+                            <div class="metrica-extra">
+                                <span>Rotação: <strong>1780 RPM</strong> (OK)</span>
+                                <span>Potência: <strong>7.5 kW</strong></span>
+                            </div>
+                        </div>
+                        <div class="motor-veredito">
+                            ✓ Nenhuma anomalia detectada. Operação estável.
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ESTATÍSTICAS CONSOLIDADAS -->
+                <h3 class="titulo-secao">CÁLCULOS ESTATÍSTICOS GERADOS</h3>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-num">72.58 °C</span>
+                        <span class="stat-desc">Temperatura Média<br><small>(68.4 + 84.7 + 76.2 + 61.0) ÷ 4</small></span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">15.7 A</span>
+                        <span class="stat-desc">Corrente Média<br><small>(14.2 + 19.3 + 17.8 + 11.5) ÷ 4</small></span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">31.5 kW</span>
+                        <span class="stat-desc">Potência Total Instalada<br><small>7.5 + 11.0 + 5.5 + 7.5</small></span>
+                    </div>
+                    <div class="stat-box destaque-quente">
+                        <span class="stat-num">MTR-02</span>
+                        <span class="stat-desc">Motor Mais Quente<br><small>Pico térmico de 84.7 °C</small></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================================= -->
+            <!-- ABA 04: SIMULAÇÃO EXATA DO CONSOLE PYTHON                 -->
+            <!-- ========================================================= -->
+            <div class="painel-conteudo" id="conteudo-terminal">
+                <h2 class="titulo-secao">// SAÍDA EXATA NO CONSOLE PYTHON</h2>
+                <p class="texto-apoio">
+                    Abaixo está o texto exato impresso pelo comando <code>print()</code> ao rodar o seu arquivo. 
+                    Note que o painel principal aparece duas vezes porque há dois blocos <code>if __name__ == "__main__":</code> no código.
+                </p>
+
+                <div class="terminal-window">
+                    <div class="terminal-barra">
+                        <div class="bolinhas">
+                            <span class="b-red"></span>
+                            <span class="b-yellow"></span>
+                            <span class="b-green"></span>
+                        </div>
+                        <span class="terminal-titulo">bash — python3 monitoramento_motores.py</span>
+                    </div>
+                    <pre class="terminal-output">================================================================
+Monitoramento de Motores Industriais - v1.0.0
+Data/Hora da leitura: 26/11/2026 13:25:00
+================================================================
+[<span class="t-ok">NORMAL </span>] MTR-01 (Estamparia) | Temp: 68.4 C | Corr: 14.2 A | Vib: 2.1 mm/s | RPM: 1750
+[<span class="t-crit">CRITICO</span>] MTR-02 (Usinagem) | Temp: 84.7 C | Corr: 19.3 A | Vib: 5.2 mm/s | RPM: 1690
+  <span class="t-crit">-> Alerta: Superaquecimento (84.7 C)</span>
+  <span class="t-crit">-> Alerta: Sobrecorrente (19.3 A)</span>
+  <span class="t-crit">-> Alerta: Vibracao elevada (5.2 mm/s)</span>
+[<span class="t-warn">ATENCAO</span>] MTR-03 (Bobinagem) | Temp: 76.2 C | Corr: 17.8 A | Vib: 4.7 mm/s | RPM: 1520
+  <span class="t-warn">-> Alerta: Vibracao elevada (4.7 mm/s)</span>
+[<span class="t-ok">NORMAL </span>] MTR-04 (Pintura) | Temp: 61.0 C | Corr: 11.5 A | Vib: 1.8 mm/s | RPM: 1780
+----------------------------------------------------------------
+Resumo: 4 motores | Temp. media: 72.58 C | Corr. media: 15.7 A | Potencia total: 31.5 kW | Maior temp.: MTR-02
+================================================================
+================================================================
+Monitoramento de Motores Industriais - v1.0.0
+Data/Hora da leitura: 26/11/2026 13:25:00
+================================================================
+[<span class="t-ok">NORMAL </span>] MTR-01 (Estamparia) | Temp: 68.4 C | Corr: 14.2 A | Vib: 2.1 mm/s | RPM: 1750
+[<span class="t-crit">CRITICO</span>] MTR-02 (Usinagem) | Temp: 84.7 C | Corr: 19.3 A | Vib: 5.2 mm/s | RPM: 1690
+  <span class="t-crit">-> Alerta: Superaquecimento (84.7 C)</span>
+  <span class="t-crit">-> Alerta: Sobrecorrente (19.3 A)</span>
+  <span class="t-crit">-> Alerta: Vibracao elevada (5.2 mm/s)</span>
+[<span class="t-warn">ATENCAO</span>] MTR-03 (Bobinagem) | Temp: 76.2 C | Corr: 17.8 A | Vib: 4.7 mm/s | RPM: 1520
+  <span class="t-warn">-> Alerta: Vibracao elevada (4.7 mm/s)</span>
+[<span class="t-ok">NORMAL </span>] MTR-04 (Pintura) | Temp: 61.0 C | Corr: 11.5 A | Vib: 1.8 mm/s | RPM: 1780
+----------------------------------------------------------------
+Resumo: 4 motores | Temp. media: 72.58 C | Corr. media: 15.7 A | Potencia total: 31.5 kW | Maior temp.: MTR-02
+================================================================
+
+<span class="t-info">PLANO DE MANUTENCAO PREVENTIVA:</span>
+ - Parada imediata (CRITICO): <span class="t-crit">['MTR-02']</span>
+ - Inspecao programada (ATENCAO): <span class="t-warn">['MTR-03']</span>
+ - Operacao estavel (NORMAL): <span class="t-ok">['MTR-01', 'MTR-04']</span><span class="cursor-piscando">█</span></pre>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="hud-footer">
+            <p>ARQUITETURA VISUAL HTML5 + CSS3 PURO // ZERO JAVASCRIPT // TELEMETRIA PYTHON DECODIFICADA</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
